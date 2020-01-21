@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h1>{{title}}</h1>
+      <h1 [align]="myalign">{{title}}</h1>
+      <button (click)="test()"> clicke me </button> <br />
+      <button (dblclick)="myalert()">showdbclick</button>
+      <ul>
+        <li *ngFor="let item of menu">
+          <img [src]="item.myimg" alt="" width="20px">--{{item.mytitle}}
+        </li>
+      </ul>
+    </div>
+
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <h2>{{hb1heading}}</h2>
+          <p>{{hb1p}}</p>
+        </div>
+        <div class="col-6">
+          <img [src]="hb1imgsrc" class="img-responsive" style="width:100px; height:50px;">
+        </div>
+      </div>
+    </div> -->
+
+
+    <div class="col-4" *ngFor="let item of items">
+      <div class="card" style="width:18rem;">
+        <img [src]="item.imgsrc" class="img-fluid" alt="Responsive image">
+        <div class="card-body">
+          <h5 class="card-title">{{item.name}}</h5>
+          <p class="card-text">{{item.desc}}</p>
+
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+
+
+    <h3 [ngStyle]="{'background-color':'green','padding.px':'20','color':'white'}">Usingngstyle</h3>
+
+    <h4 [ngStyle]="{'background-color': Usingconditional === 1 ? 'red':'yellow'}">Testing ngstyleconditional</h4>
+    <div [ngClass]="'test1'"> Testing ngclass</div>
+    <h4 [ngClass]=" ['test1','test2']">Testing ArrayNgclass</h4>
+    <h5 [ngClass]="gender === 'male' ? 'male-class':'female-class'">Testing condngclass</h5>
